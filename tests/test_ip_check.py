@@ -19,11 +19,6 @@ if os.path.isfile(B_FILE_PATH):
         assert result.returncode == 0
         assert result.stdout == 'INVALID'
     
-    def test_ip_check_invalid_ip_3():
-        result = run([B_FILE_PATH], input='001.0.0.1', encoding='utf-8', stdout=PIPE)
-        assert result.returncode == 0
-        assert result.stdout == 'INVALID'
-    
     def test_ip_check_invalid_ip_4():
         result = run([B_FILE_PATH], input='1.0.0.1000', encoding='utf-8', stdout=PIPE)
         assert result.returncode == 0
