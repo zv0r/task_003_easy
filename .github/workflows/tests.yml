@@ -14,7 +14,16 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.8
-
+        
+    - name: Compile ip_check
+      run: |
+        gcc -Wall -Werror -Wextra -std=c11 -o ./src/ip_check ./src/ip_check.c
+    
+    - name: Compile mask_check if exists
+      if: ${{ hashFiles('./src/mask_check.c') != '' }}
+      run: |
+        gcc -Wall -Werror -Wextra -std=c11 -o ./src/mask_check ./src/mask_check.c
+        
     - name: Build project using make
       run: |
         chmod +x ./make.sh
