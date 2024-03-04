@@ -3,7 +3,7 @@ from subprocess import run, PIPE
 import os
 import pytest
 
-B_FILE_PATH = '/src/ip_check'
+B_FILE_PATH = './src/ip_check'
 
 if os.path.isfile(B_FILE_PATH):
     def test_src_folder_containts_ip_check():
