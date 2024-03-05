@@ -8,8 +8,12 @@ bool _is_valid_ipv4(int octet_1, int octet_2, int octet_3, int octet_4) {
            octet_4 >= 0 && octet_4 < 256;
 }
 
-uint64_t _calc_ipv4_as_number(int octet_1, int octet_2, int octet_3, int octet_4) {
-    return (uint64_t)octet_1 * 1000000000 + octet_2 * 1000000 + octet_3 * 1000 + octet_4;
+uint32_t _calc_ipv4_as_number(int octet_1, int octet_2, int octet_3, int octet_4) {
+    uint32_t result = (uint8_t)octet_1;
+    result = (result << 8) | (uint8_t)octet_2;
+    result = (result << 8) | (uint8_t)octet_3;
+    result = (result << 8) | (uint8_t)octet_4;
+    return result;
 }
 
 void build_ipv4_address(IPv4 *ip_address, int octet_1, int octet_2, int octet_3, int octet_4) {

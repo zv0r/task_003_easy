@@ -12,7 +12,7 @@ typedef struct ipv4_t {
     int octet_2;
     int octet_3;
     int octet_4;
-    uint64_t as_num;
+    uint32_t as_num;
     bool valid;
 } IPv4;
 
