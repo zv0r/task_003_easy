@@ -50,7 +50,8 @@ int _parse_octets(char* ip_address_str, int* octet_1, int* octet_2, int* octet_3
 void input_ipv4(IPv4* ip_address) {
     char* ip_address_str = NULL;
     int octet_1, octet_2, octet_3, octet_4, parse_octets_result;
-    if (scanf("%ms", &ip_address_str) == 1 && (parse_octets_result = _parse_octets(ip_address_str, &octet_1, &octet_2, &octet_3, &octet_4))) {
+    if (scanf("%ms", &ip_address_str) == 1 &&
+        (parse_octets_result = _parse_octets(ip_address_str, &octet_1, &octet_2, &octet_3, &octet_4))) {
         build_ipv4_address(ip_address, octet_1, octet_2, octet_3, octet_4);
         if (parse_octets_result > 1) {
             ip_address->valid = false;
@@ -62,8 +63,8 @@ void input_ipv4(IPv4* ip_address) {
     }
 }
 
-void output_ip_check(const IPv4 *const ip_address) { printf(ip_address->valid ? "VALID" : "INVALID"); }
+void output_ip_check(const IPv4* const ip_address) { printf(ip_address->valid ? "VALID" : "INVALID"); }
 
-void output_mask_check(const IPv4 *const ip_address_1, const IPv4 *const ip_address_2) {
+void output_mask_check(const IPv4* const ip_address_1, const IPv4* const ip_address_2) {
     printf(is_ipv4_from_same_network(ip_address_1, ip_address_2, IPV4_BIT_MASK) ? "YES" : "NO");
 }
