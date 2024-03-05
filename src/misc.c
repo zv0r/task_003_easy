@@ -61,3 +61,9 @@ void input_ipv4(IPv4* ip_address) {
         achtung();
     }
 }
+
+void output_ip_check(const IPv4 *const ip_address) { printf(ip_address->valid ? "VALID" : "INVALID"); }
+
+void output_mask_check(const IPv4 *const ip_address_1, const IPv4 *const ip_address_2) {
+    printf(is_ipv4_from_same_network(ip_address_1, ip_address_2, IPV4_BIT_MASK) ? "YES" : "NO");
+}
