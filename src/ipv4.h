@@ -4,7 +4,6 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-#define IPV4_BIT_LENGTH 32
 #define IPV4_BIT_MASK 24
 
 typedef struct ipv4_t {

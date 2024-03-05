@@ -27,6 +27,6 @@ void build_ipv4_address(IPv4 *ip_address, int octet_1, int octet_2, int octet_3,
 
 bool is_ipv4_from_same_network(const IPv4 *const ip_address_1, const IPv4 *const ip_address_2,
                                unsigned int mask) {
-    uint8_t shift = IPV4_BIT_LENGTH - mask;
+    uint8_t shift = 32 - mask;
     return (ip_address_1->as_num >> shift) == (ip_address_2->as_num >> shift);
 }
