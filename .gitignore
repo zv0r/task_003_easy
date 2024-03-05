@@ -1,6 +1,7 @@
 .vscode/
 __pycache__
 src/ip_check
+src/mask_check
 bin/
 .clang-format
 
